@@ -1,0 +1,432 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/**********************************/
+/* 0. Variáveis
+/* 1. Container
+/* 2. Menu
+/* 3. Header
+/* 4. Quem somos
+/* 5. Nossos cursos
+/* 6. Planos
+/* 7. Vantagens
+/* 8. Newsletter
+/* 9. Footer
+/**********************************/
+
+/**********************************/
+/* 0. Variáveis
+/**********************************/
+
+:root {
+	--ff-primary: "Nunito", Helvetica, Arial, sans-serif;
+
+
+	--clr-blue-dark: #00008b;
+	--clr-blue-light: #add8e6;
+	--clr-green-dark: #049A40;
+	--clr-green-light: #0BF96A;
+	--clr-pink-dark: #E10BF9;
+	--clr-pink-light: #F3A0FD;
+	--clr-white: #F5F5F5;
+
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--clr-white);
+	font-family: var(--ff-primary);
+}
+
+a, a:link, a:visited, a:active{
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+	color: var(--clr-pink-dark);
+}
+
+hr {
+	border: none;
+	background-color: var(--clr-pink-dark);
+	height: 2px;
+	width: 140px;
+	margin: 20px auto;
+	
+}
+
+/**********************************/
+/* 1. Estilos gerais
+/**********************************/
+
+p {
+	line-height: 21.82px;
+	padding: 0px 10px;
+}
+
+.section__titulo {
+	text-align: center;
+	font-size: 3rem;
+	margin-bottom: 10px;
+}
+
+img {
+	display: block;
+	/*max-width -> evita que as imagens fiquem grandes demais e ultrapassem os seus pares*/
+	max-width: 100%;
+}
+
+/**********************************/
+/* 2. Menu
+/**********************************/
+
+.menu-bg {
+	background-color: var(--clr-green-light);
+}
+
+.menu {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 960px;
+	margin: 0 auto;
+	flex-wrap: wrap;
+}
+
+.menu__logo {
+	margin: 10px;
+}
+
+.nav__list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.nav__link {
+	padding: 20px 10px;
+}
+
+/**********************************/
+/* 3. Header
+/**********************************/
+
+.intro {
+	font-weight: bold;
+	font-size: 3rem;
+	text-align: center;
+	margin: 0 auto;
+	padding: 25px 0px;
+}
+
+/**********************************/
+/* 4. Quem somos
+/**********************************/
+
+.somos {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.somos-c {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.somos-c__texto {
+	/*flex = flex-grow flex shrink flex-basis
+			6 -> O somos-c__texto deve ocupar um espaço 6x maior que o espaço dos outros flex itens.
+			1 -> Permitindo que o item reduza o seu tamanho pra caber no felx container.
+
+			160px -> O tamanho inicial desse elemento é 160px
+	*/
+	flex: 6 1 160px;
+
+}
+
+.somos-c__img {
+	flex: 1 1 350px;
+}
+
+/**********************************/
+/* 5. Nossos cursos
+/**********************************/
+
+.cursos {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.curso-c {
+	/* display -> Tudo que ta dentro de curso-c é flex-item*/
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.curso {
+	width: 280px;
+	margin: 0 20px;
+}
+
+.curso__titulo {
+	font-size: 1.5rem;
+	text-align: center;
+	margin: 10px 0px 5px 0px;
+}
+
+.curso__descricao {
+	text-align: justify;
+}
+
+/**********************************/
+/* 6. Planos
+/**********************************/
+
+.planos {
+	background-color: var(--clr-pink-light);
+}
+
+.plano-c {
+	max-width: 960px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.plano {
+	width: 290px;
+	margin: 10px;
+	border: 2px solid var(--clr-green-light);
+}
+
+.plano__titulo {
+	font-size: 3rem;
+	font-weight: bold;
+	text-align: center;
+	margin: 10px auto;
+}
+
+.plano__preco {
+	font-size: 3rem;
+	display: block;
+	text-align: center;
+	font-weight: bold;
+}
+
+.plano__preco sup {
+	position: relative;
+	font-size: 1.5rem;
+	top: -18px;
+}
+
+.plano__divisor {
+	background-color: var(--clr-green-light);
+	margin: 5px auto;
+	width: 25px;
+}
+
+.plano-lista {
+	max-width: 195px;
+	margin: 0 auto;
+}
+
+.plano-lista__item {
+	margin: 10px 0;
+	font-style: italic;
+	display: flex;
+	align-items: center;
+
+}
+
+.plano-lista__item::before {
+	content: "";
+	display: block;
+	width: 5px;
+	height: 5px;
+	background-color: var(--clr-green-light);
+	border-radius: 5px;
+	margin-right: 5px;
+}
+.plano__button-comprar {
+	display: block;
+	max-width: 190px;
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 15px auto;
+	padding: 10px;
+	text-align: center;
+	text-transform: uppercase; /*Deixa as letras em maiusculas*/
+	border: 2px solid var(--clr-green-light);
+}
+
+/*Seleciona o último filho (conteiner ou a div no caso) o ultimo filho do plano-c é o ULTRA*/
+
+.plano:last-child {
+	background-color: var(--clr-green-light);
+}
+
+/*O plano, dentro desse plano eu tenho o .plano__button-comprar e eu quero que os dois tenham borda rosa*/
+.plano:last-child, .plano:last-child .plano__button-comprar {
+	border: 2px solid var(--clr-pink-dark);
+}
+
+.plano:last-child .plano-lista__item::before, .plano:last-child .plano__divisor {
+	background-color: var(--clr-pink-dark);
+}
+
+/*TODAS AS REGRAS QUE DIGITAR AQUI DENTRO ELA SEJA EXECUTADA EM TELAS ATÉ 800PX DE LARGURA, OU SEJA, SE A TELA PASSAR DE 800PX O QUE TIVER AQUI DENTRO NÃO VAI SER EXECUTADO.*/
+
+@media (max-width: 800px) {
+	.plano:nth-child(3) {
+		order: -2;
+	}
+
+	.plano:nth-child(2) {
+		order: -1;
+	}
+}
+
+/**********************************/
+/* 7. Vantagens
+/**********************************/
+
+.vantagens {
+	max-width: 960px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.vantagem {
+	max-width: 240px;
+	margin: 10px;
+}
+
+.vantagem__titulo {
+	font-size: 1.7rem;
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
+
+.vantagem__titulo::before {
+	content: "";
+	display: inline-block;
+	width: 10px;
+	height: 25px;
+	margin-right: 5px;
+}
+
+/*n equivale ao valor 0. Então 3x0 = 0 , 0+1= 1 
+repete e faz 3xnque agora n é (1) = 3 + 1 = 4
+ou seja, na posição 1 e 4 vai ter o before green-light
+*/
+.vantagem:nth-of-type(3n+1) .vantagem__titulo::before {
+	background: var(--clr-green-light)
+}
+
+.vantagem:nth-of-type(3n+2) .vantagem__titulo::before {
+	background: var(--clr-pink-dark)
+}
+
+.vantagem:nth-of-type(3n+3) .vantagem__titulo::before {
+	background: var(--clr-green-dark)
+}
+
+@media (max-width: 800px) {
+	.vantagem {
+		max-width: 220px;
+	}
+}
+
+/**********************************/
+/* 8. Newsletter
+/**********************************/
+
+.newsletter {
+	background-color: var(--clr-green-light);
+}
+
+.newsletter-c {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 50px 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.newsletter-info {
+	padding-left: 10px;
+	flex: 1 1 260px;
+}
+
+.newsletter-info__titulo {
+	font-size: 2.62rem;
+	font-weight: bold;
+}
+
+.newsletter-info__descricao {
+	font-style: italic;
+}
+
+.newsletter-form {
+	flex: 2 1 260px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.newsletter-form__input {
+	flex: 3 1 260px;
+	font-size: 1.25rem;
+	width: 325px;
+	color: black;
+	font-style: italic;
+	font-family: var(--ff-primary);
+	border: 10px solid var(--clr-pink-dark);
+	padding: 10px;
+	margin: 0;
+	border-radius: 0px;
+}
+
+.newsletter-form__submit {
+	flex: 1 1 260px;
+	width: 192px;
+	font-family: var(--ff-primary);
+	font-size: 2.25rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color: var(--clr-pink-dark);
+	color: black;
+	cursor: pointer;
+	border: none;
+	padding: 15px;
+}
+
+/**********************************/
+/* 9. Footer
+/**********************************/
+
+.footer {
+	background-color: var(--clr-pink-light);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 55px calc((100% - 960px) / 2);
+}
+
+.footer__copyright, .footer__logo {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
